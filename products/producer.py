@@ -2,7 +2,9 @@ import json
 
 import pika
 
-params = pika.URLParameters('amqps://mjwxsfts:FjoGL8uUVxSv8jgz9cqMzppHxN7xZ2Xg@shrimp.rmq.cloudamqp.com/mjwxsfts')
+import os
+
+params = pika.URLParameters(os.getenv("AMQP"))
 
 connection = pika.BlockingConnection(params)
 
